@@ -2,6 +2,7 @@
 from argparse import ArgumentParser
 from .action.list_all import list_all
 from .action.find import find
+from .action.common import add_template, remove_template, list_gitignore, create_gitignore, update_gitignore
 
 
 def main() -> int:
@@ -14,10 +15,18 @@ def main() -> int:
     action: str = arguments.action
     if action == "list-all":
         list_all()
-        return 0
-    if action == "find":
+    elif action == "find":
         find(arguments.term[0])
-        return 0
+    elif action == "add":
+        add_template(arguments.template)
+    elif action == "remove":
+        remove_template(arguments.template)
+    elif action == "create":
+        create_gitignore(arguments.template)
+    elif action == "list":
+        list_gitignore()
+    elif action == "update":
+        update_gitignore()
     return 0
 
 

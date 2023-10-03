@@ -14,6 +14,6 @@ def get_templates(url: str = PROVIDER_URL) -> List[str]:
 
 
 def download_gitignore(filename: Path, template: Set[str], url: str = PROVIDER_URL) -> None:
-    with urlopen(Request(url + ",".join(template), headers={"User-Agent": "Python"})) as request:
+    with urlopen(Request(url + ",".join(sorted(template)), headers={"User-Agent": "Python"})) as request:
         with open(filename, mode="wb") as file:
             file.write(request.read())
