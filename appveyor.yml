@@ -6,9 +6,8 @@ branches:
   only:
     - master
     - /rc\/([\d\w\-\.]+)/
-    - upgrade
 environment:
-  PY_VER: 3.10
+  PY_VER: 3.11
 init:
   - sh: source $HOME/venv$PY_VER/bin/activate
   - sh: export TOX_DISCOVER="$HOME/venv3.7/bin/python:$HOME/venv3.8/bin/python:$HOME/venv3.9/bin/python:$HOME/venv3.10/bin/python:$HOME/venv3.11/bin/python"
