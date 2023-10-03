@@ -1,16 +1,20 @@
 """ Provides main method """
 from argparse import ArgumentParser
-import sys
+from .action.list_all import list_all
 
 
-def main():
+def main() -> int:
     """Main project method"""
     parser = _create_argument_parser()
     arguments = parser.parse_args()
     if ("action" not in arguments) or (arguments.action is None):
         parser.print_help()
-        sys.exit(1)
-    print(arguments)
+        return 1
+    action: str = arguments.action
+    if action == "list-all":
+        list_all()
+        return 0
+    return 0
 
 
 def _create_argument_parser() -> ArgumentParser:
