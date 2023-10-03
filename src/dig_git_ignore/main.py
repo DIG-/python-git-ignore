@@ -31,7 +31,7 @@ def main() -> int:
 
 
 def _create_argument_parser() -> ArgumentParser:
-    parser = ArgumentParser(description="TODO")
+    parser = ArgumentParser(description="Generate/update gitignore file with templates")
     action_subparser = parser.add_subparsers(title="action", dest="action")
 
     description = "Add template to current .gitignore."
