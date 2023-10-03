@@ -1,7 +1,7 @@
 from typing import List
 from itertools import chain
-from dig_git_ignore.constants import PROVIDER_URL
-from dig_git_ignore.provider import get_templates
+from ..constants import PROVIDER_URL
+from ..provider import get_templates
 
 
 def find(term: str, url: str = PROVIDER_URL) -> None:

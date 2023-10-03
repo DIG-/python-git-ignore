@@ -1,6 +1,6 @@
 from typing import List
 from urllib.request import urlopen, Request
-from .constants import PROVIDER_URL  # pylint: disable=relative-beyond-top-level
+from .constants import PROVIDER_URL
 
 
 def get_templates(url: str = PROVIDER_URL) -> List[str]:
