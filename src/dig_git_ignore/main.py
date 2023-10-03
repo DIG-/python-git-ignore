@@ -1,6 +1,7 @@
 """ Provides main method """
 from argparse import ArgumentParser
 from .action.list_all import list_all
+from .action.find import find
 
 
 def main() -> int:
@@ -13,6 +14,9 @@ def main() -> int:
     action: str = arguments.action
     if action == "list-all":
         list_all()
+        return 0
+    if action == "find":
+        find(arguments.term[0])
         return 0
     return 0
 
