@@ -1,5 +1,5 @@
 from typing import List, Generator
-from ..constants import PROVIDER_URL
+from ..constants import PROVIDER_URL, GITIGNORE_FILENAME
 from .update import update
 from .template import current
 
@@ -18,7 +18,9 @@ def list_gitignore() -> None:
 
 
 def create_gitignore(templates: List[str], url: str = PROVIDER_URL) -> None:
-    pass
+    with open(GITIGNORE_FILENAME, mode="wb"):
+        pass
+    update(set(_to_lower(templates)), url)
 
 
 def update_gitignore(url: str = PROVIDER_URL) -> None:
