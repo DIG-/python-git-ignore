@@ -6,7 +6,6 @@ branches:
   only:
     - master
     - /rc\/([\d\w\-\.]+)/
-    - upgrade
 environment:
   PY_VER: 3.11
 init:
@@ -18,4 +17,4 @@ install:
   - python -m pip install "pip>=21" "wheel>=0.37" || python -c "print('')"
   - python -m pip install --upgrade --prefer-binary "tox<4.0.0"
 test_script:
-  - python -m tox -vvv
+  - python -m tox
