@@ -1,4 +1,5 @@
-from typing import List
+from typing import List, Set
+from pathlib import Path
 from urllib.request import urlopen, Request
 from .constants import PROVIDER_URL
 
@@ -10,3 +11,9 @@ def get_templates(url: str = PROVIDER_URL) -> List[str]:
         for line in response.splitlines():
             output.extend(line.split(","))
     return output
+
+
+def download_gitignore(filename: Path, template: Set[str], url: str = PROVIDER_URL) -> None:
+    with urlopen(Request(url + ",".join(template), headers={"User-Agent": "Python"})) as request:
+        with open(filename, mode="wb") as file:
+            file.write(request.read())
