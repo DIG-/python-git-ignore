@@ -66,15 +66,15 @@ Return supported templates who contains the searched term.
 ## Installation
 ### From PyPI (preferred):
 ``` sh
-python -m pip install dig_git_ignore
+python -m pip install dig-git-ignore
 ```
 ### From github release:
 ``` sh
-python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.0/dig_git_ignore-1.0.0-py3-none-any.whl"
+python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.1/dig_git_ignore-1.0.1-py3-none-any.whl"
 ```
 or
 ``` sh
-python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.0/dig_git_ignore.tar.gz"
+python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.1/dig_git_ignore.tar.gz"
 ```
 
 ### From github main branch:
