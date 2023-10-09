@@ -10,13 +10,12 @@ environment:
   PY_VER: 3.11
 init:
   - sh: source $HOME/venv$PY_VER/bin/activate
-  - sh: export TOX_DISCOVER="$HOME/venv3.7/bin/python:$HOME/venv3.8/bin/python:$HOME/venv3.9/bin/python:$HOME/venv3.10/bin/python:$HOME/venv3.11/bin/python:$HOME/venv3.12/bin/python"
   - sh: python --version
 build: false
 install:
   - python -m pip install "pip>=21" "wheel>=0.37" || python -c "print('')"
   - python -m pip install --upgrade --prefer-binary tox
 test_script:
-  - python -m tox r --discover "$HOME/venv3.7/bin" "$HOME/venv3.8/bin" "$HOME/venv3.9/bin" "$HOME/venv3.10/bin" "$HOME/venv3.11/bin" "$HOME/venv3.12/bin"
+  - python -m tox r --discover "$HOME/venv3.7/bin/python" "$HOME/venv3.8/bin/python" "$HOME/venv3.9/bin/python" "$HOME/venv3.10/bin/python" "$HOME/venv3.11/bin/python" "$HOME/venv3.12/bin/python"
 on_finish:
-  - sh: find "$APPVEYOR_BUILD_FOLDER" -type f -name 'test-*.xml' -print0 | xargs -0 -I '{}' curl -F 'file=@{}' "https://ci.appveyor.com/api/testresults/junit/$APPVEYOR_JOB_ID"
+  - sh: find . -type f -name 'tests-*.xml' -print0 | xargs -0 -I '{}' curl -F 'file=@{}' "https://ci.appveyor.com/api/testresults/junit/$APPVEYOR_JOB_ID"
