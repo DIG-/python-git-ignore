@@ -18,3 +18,5 @@ install:
   - python -m pip install --upgrade --prefer-binary "tox<4.0.0"
 test_script:
   - python -m tox
+on_finish:
+  - sh: find "$APPVEYOR_BUILD_FOLDER" -type f -name 'test-*.xml' -print0 | xargs -0 -I '{}' curl -F 'file=@{}' "https://ci.appveyor.com/api/testresults/junit/$APPVEYOR_JOB_ID"
