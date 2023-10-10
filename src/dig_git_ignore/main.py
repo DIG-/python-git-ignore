@@ -1,14 +1,20 @@
 """ Provides main method """
 from argparse import ArgumentParser
+from typing import List
+import sys
 from .action.list_all import list_all
 from .action.find import find
 from .action.common import add_template, remove_template, list_gitignore, create_gitignore, update_gitignore
 
 
 def main() -> int:
+    return _main(sys.argv[1:])
+
+
+def _main(args: List[str]) -> int:
     """Main project method"""
     parser = _create_argument_parser()
-    arguments = parser.parse_args()
+    arguments = parser.parse_args(args)
     if ("action" not in arguments) or (arguments.action is None):
         parser.print_help()
         return 1
