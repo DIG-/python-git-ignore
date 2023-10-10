@@ -1,5 +1,6 @@
 # DIG git-ignore
 [![Build Status](https://img.shields.io/appveyor/build/DIG-/python-git-ignore/master?logo=appveyor&logoColor=dddddd)](https://ci.appveyor.com/project/DIG-/python-git-ignore/branch/master)
+[![Build tests](https://img.shields.io/appveyor/tests/DIG-/python-git-ignore/master?logo=appveyor&logoColor=dddddd)](https://ci.appveyor.com/project/DIG-/python-git-ignore/branch/master)
 [![PyPI - License](https://img.shields.io/pypi/l/dig-git-ignore?color=blue)](https://creativecommons.org/licenses/by-nd/4.0/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dig-git-ignore)](https://pypi.org/project/dig-git-ignore/)
 [![PyPI - Version](https://img.shields.io/pypi/v/dig-git-ignore)](https://pypi.org/project/dig-git-ignore/)
@@ -70,11 +71,11 @@ python -m pip install dig-git-ignore
 ```
 ### From github release:
 ``` sh
-python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.1/dig_git_ignore-1.0.1-py3-none-any.whl"
+python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.2/dig_git_ignore-1.0.2-py3-none-any.whl"
 ```
 or
 ``` sh
-python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.1/dig_git_ignore.tar.gz"
+python -m pip install "https://github.com/DIG-/python-git-ignore/releases/download/1.0.2/dig_git_ignore.tar.gz"
 ```
 
 ### From github main branch:

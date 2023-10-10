@@ -15,6 +15,11 @@ from ..provider import download_gitignore
 
 def update(template: Set[str], url: str = PROVIDER_URL) -> None:
     download_gitignore(Path(GITIGNORE_DOWNLOAD), template, url)
+    if not os.path.exists(GITIGNORE_FILENAME):
+        # Create empty gitignore
+        with open(GITIGNORE_FILENAME, mode="wb"):
+            pass
+
     with open(GITIGNORE_FILENAME, mode="rt", encoding="utf-8") as current:
         with open(GITIGNORE_DOWNLOAD, mode="rt", encoding="utf-8") as downloaded:
             with open(GITIGNORE_TEMP, mode="wt", encoding="utf-8") as new:

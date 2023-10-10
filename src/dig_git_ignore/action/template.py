@@ -1,3 +1,4 @@
+import os.path
 from typing import Set
 from sys import version_info
 from ..constants import GITIGNORE_FILENAME, CONTENT_BLOCK_START
@@ -5,6 +6,8 @@ from ..constants import GITIGNORE_FILENAME, CONTENT_BLOCK_START
 
 def current() -> Set[str]:
     output: Set[str] = set()
+    if not os.path.exists(GITIGNORE_FILENAME):
+        return output
     with open(GITIGNORE_FILENAME, mode="r", encoding="utf-8") as file:
         line = file.readline()
         while line:
